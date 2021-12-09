@@ -90,3 +90,22 @@
 
   export default App;
   ```
+
+## axios
+
+- Axios is a promise-based HTTP Client for node.js and the browser. On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
+
+- `npm i axios`
+
+# Javascript
+
+- es6, Destructuring Assignment
+
+  ```js
+  // const movies = axios.get('https://yts-proxy.now.sh/list_movies.json');
+  // setState({ movies: movies.data.data.movies });
+
+  // prettier-ignore
+  const {data: {data: { movies }}} = await axios.get('https://yts-proxy.now.sh/list_movies.json');
+  setState({ movies });
+  ```
