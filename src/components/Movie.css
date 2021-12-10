@@ -48,7 +48,7 @@ p {
     font-size: 1.3em;
   }
   .movie__summary {
-    text-overflew: ellipsis;
+    text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 3;

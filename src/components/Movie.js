@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 
-function Movie({ id, year, title, summary, poster, genres }) {
+function Movie({ id, year, title, summary, poster, genres, backgroundImage }) {
   return (
     <div className='movie'>
       <img src={poster} alt={title} title={title} />
@@ -11,6 +11,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
         <h3 className='movie__year'>{year}</h3>
         <p className='movie__genres'>{genres.reduce((a, b) => `${a}, ${b}`)}</p>
         <p className='movie__summary'>{summary}</p>
+        <img src={backgroundImage} alt={title} />
       </div>
     </div>
   );
@@ -23,6 +24,7 @@ Movie.propTypes = {
   summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   genres: PropTypes.array.isRequired,
+  backgroundImage: PropTypes.string.isRequired,
 };
 
 export default Movie;
