@@ -95,7 +95,74 @@
 
 - Axios is a promise-based HTTP Client for node.js and the browser. On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
 
+- instead of `fetch`
+
 - `npm i axios`
+
+## Navigation
+
+- When you use `Link`, it needs to be inside `Router`
+
+- BrowserRouter
+
+  - It uses html5 historyAPI (`pushState`, `replaceState`, and `popstate`)
+
+  -
+
+- HashRouter
+
+  - It uses the hash portion of the URL (`window.location.hash`)
+
+  -
+
+- ```jsx
+  import React from 'react';
+  import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+  import Home from './routes/Home.js';
+  import About from './routes/About.js';
+  import Navigation from './components/Navigation';
+
+  function App() {
+    return (
+      <Router basename={process.env.PUBLIC_URL}>
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/about' element={<About />}></Route>
+        </Routes>
+      </Router>
+    );
+  }
+
+  export default App;
+  ```
+
+## detail page
+
+- on Movie.js
+
+  - ```jsx
+    function Movie({ year, title, summary, poster, genres }) {
+      return (
+        <Link to='/movie-detail' state={{ year, title, summary, poster, genres }}>
+          <div className={styles.movie}>
+    ```
+
+- on Detail.js
+
+  - ```jsx
+    import React from 'react';
+    import { useLocation } from 'react-router-dom';
+    import styles from './Movie.module.css';
+
+    function Detail() {
+      const location = useLocation();
+      console.log(location);
+      const { poster, title, year, genres, summary } = location.state;
+      return (
+        <div className={styles.movie}>
+          <img src={poster} alt={title} title={title} />
+    ```
 
 # Javascript
 
