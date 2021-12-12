@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Movie.module.css';
 
-function Movie({ year, title, summary, poster, genres }) {
+function Movie({ id, year, title, summary, poster, genres }) {
   return (
-    <Link to='/movie-detail' state={{ year, title, summary, poster, genres }}>
+    <Link to={`/movie/${id}`} state={{ year, title, summary, poster, genres }}>
       <div className={styles.movie}>
         <img src={poster} alt={title} title={title} />
         <div className={styles.movie__data}>

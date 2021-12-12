@@ -107,13 +107,9 @@
 
   - It uses html5 historyAPI (`pushState`, `replaceState`, and `popstate`)
 
-  -
-
 - HashRouter
 
   - It uses the hash portion of the URL (`window.location.hash`)
-
-  -
 
 - ```jsx
   import React from 'react';
